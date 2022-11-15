@@ -21,7 +21,7 @@ readdirSync('./src/commands').forEach(async file => {
   commands.push(command.data.toJSON());
   client.commands.set(command.data.name, command);
 })
-
+//Bu altyapı Raven sunucusuna aittir paylaşmamanızı rica ederiz.
 client.on("ready", async () => {
         try {
             await rest.put(
