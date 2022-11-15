@@ -54,7 +54,7 @@ client.on(Events.GuildBanAdd, async ban => {
   if(!fetchedLogs) return;
   const banLog = fetchedLogs.entries.first();
   const { executor, target } = banLog;
-  const channel = db.fetch(`banlog_${role.guild.id}`)
+  const channel = db.fetch(`banlog_${ban.guild.id}`)
   if(!channel) return;
   client.channels.cache.get(channel).send(`**${ban.user.tag}** Adlı kişi **${executor.tag}** tarafından yasaklandı.`)
   ban.guild.roles.create({name: "Cezalı", permissions:[]}).then(m => {
